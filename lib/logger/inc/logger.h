@@ -12,7 +12,7 @@ namespace lab1
   {
     public:
       static logger* get_instance();
-      void log(const std::string& msg);
+      void log(const std::string& id, const std::string& msg);
 
     private:
       logger();
@@ -21,7 +21,6 @@ namespace lab1
       logger& operator=(const logger& other) = delete;
       logger& operator=(logger&& other) = delete;
 
-      
       std::mutex mtx_;
 
       const char*   log_file_name_{"log.txt"};
